@@ -18,8 +18,21 @@ var SearchComponent = (function(){
     
     SearchComponent.prototype.searchMusic = function(){
         var _this = this;
-        
+        this._spotifyService.searchMusic(this.searchStr)
+            .subscribe(function(res){
+                _this.searchRes = res.artists.items;
+            });
     };
+    
+    SearchComponent = __decorate([
+        core_1.component({
+            moduleId : module.id,
+            selector : 'search',
+            templateUrl: 'search.component.html',
+            providers: [spotify_service_1.SpotifyService]
+        }),
+        __metadata('design:paramtypes', [spotify_service_1.SpotifyService])
+    ], SearchComponent);
     
     return SearchComponent;
 }());

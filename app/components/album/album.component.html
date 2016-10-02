@@ -1,0 +1,22 @@
+<div id="album" *ngIf="album">
+    <header class="album-header">
+        <div class="row">
+            <div class="col-md-4">
+                <div *ngIf="album.images.length > 0">
+                    <img class="album-thumb" src="{{album.images[0].url}}">
+                </div>    
+            </div>
+            <div class="col-md-8">
+                
+            </div>
+        </div>
+    </header>
+    <div class="album-tracks">
+        <h2>Album Tracklist</h2>
+        <div *ngFor="let track of album.tracks.items">
+            <div class="well">
+                
+            </div>
+        </div>
+    </div>
+</div>
