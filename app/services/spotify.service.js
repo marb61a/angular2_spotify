@@ -18,6 +18,25 @@ var SpotifyService = (function(){
         this._http = _http;
     }
     
+    SpotifyService.prototype.searchMusic = function(str, type){
+        if(type === void 0){
+            type = 'artist';
+        }
+        this.searchUrl = 'https://api.spotify.com/v1/search?query=' + str + '&offset=0&limit=20&type=' + type + '&market=US';
+        return this._http.get(this.searchUrl)
+            .map(function(res){
+                return res.json();
+            });
+    };
+    
+    SpotifyService.prototype.getArtist = function(id){
+        this.artistUrl = 'https://api.spotify.com/v1/artists/' + id;
+        return this._http.get(this.artistUrl)
+            .map(function (res) { 
+                return res.json(); 
+            });    
+    };
+    
 }());
 
 exports.SpotifyService = SpotifyService;
