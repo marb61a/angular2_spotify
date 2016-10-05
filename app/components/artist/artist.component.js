@@ -20,6 +20,33 @@ var ArtistComponent = (function(){
         this._route = _route;
     }
     
+    ArtistComponent.prototype.ngOnInit = function(){
+        var _this = this;
+        this._route.params
+            .map(function(params){
+                return params['id'];
+            })
+            .subscribe(function(id){
+                _this._spotifyService.getArtist(id)
+                    .subscribe(function(artist){
+                        _this.artist = artist;
+                    });
+                    _this._spotifyService.getAlbums(id)
+                        .subscribe(function (albums) {
+                        _this.albums = albums.items;
+                    });
+            });
+    };
+    
+    ArtistComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'artist',
+            templateUrl: 'artist.component.html'
+        }), 
+        __metadata('design:paramtypes', [spotify_service_1.SpotifyService, router_1.ActivatedRoute])
+    ], ArtistComponent);
+    
     return ArtistComponent;
 }());
 
