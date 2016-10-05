@@ -26,6 +26,29 @@ var AppModule = (function(){
         
     }
     
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports : [
+                platform_browser_1.BrowserModule,
+                app_routing_1.routing,
+                forms_1.FormsModule,
+                http_1.HttpModule    
+            ],
+            declarations : [
+                app_component_1.AppComponent,
+                search_component_1.SearchComponent,
+                navbar_component_1.NavbarComponent,
+                about_component_1.AboutComponent,
+                artist_component_1.ArtistComponent,
+                album_component_1.AlbumComponent
+            ],
+            bootstrap : [
+                app_component_1.AppComponent
+            ]
+        }),
+        __metadata('design:paramtypes', [])
+    ], AppModule);
+    
     return AppModule;
 }());
 
