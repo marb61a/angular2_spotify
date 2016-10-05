@@ -8,36 +8,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-
 var spotify_service_1 = require('../../services/spotify.service');
-
-var ArtistComponent = (function(){
-    function ArtistComponent(_spotifyService, _route){
+var ArtistComponent = (function () {
+    function ArtistComponent(_spotifyService, _route) {
         this._spotifyService = _spotifyService;
         this._route = _route;
     }
-    
-    ArtistComponent.prototype.ngOnInit = function(){
+    ArtistComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._route.params
-            .map(function(params){
-                return params['id'];
-            })
-            .subscribe(function(id){
-                _this._spotifyService.getArtist(id)
-                    .subscribe(function(artist){
-                        _this.artist = artist;
-                    });
-                    _this._spotifyService.getAlbums(id)
-                        .subscribe(function (albums) {
-                        _this.albums = albums.items;
-                    });
+            .map(function (params) { return params['id']; })
+            .subscribe(function (id) {
+            _this._spotifyService.getArtist(id)
+                .subscribe(function (artist) {
+                _this.artist = artist;
             });
+            _this._spotifyService.getAlbums(id)
+                .subscribe(function (albums) {
+                _this.albums = albums.items;
+            });
+        });
     };
-    
     ArtistComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -46,8 +39,7 @@ var ArtistComponent = (function(){
         }), 
         __metadata('design:paramtypes', [spotify_service_1.SpotifyService, router_1.ActivatedRoute])
     ], ArtistComponent);
-    
     return ArtistComponent;
 }());
-
 exports.ArtistComponent = ArtistComponent;
+//# sourceMappingURL=artist.component.js.map
