@@ -8,48 +8,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var app_routing_1 = require('./app.routing');
 var app_component_1 = require('./app.component');
-var navbar_component_1 = require('./components/navbar/navbar.component');
 var search_component_1 = require('./components/search/search.component');
+var navbar_component_1 = require('./components/navbar/navbar.component');
 var about_component_1 = require('./components/about/about.component');
-var album_component_1 = require('./components/album/album.component');
 var artist_component_1 = require('./components/artist/artist.component');
-
-var AppModule = (function(){
-    function AppModule(){
-        
+var album_component_1 = require('./components/album/album.component');
+var app_routing_1 = require('./app.routing');
+var AppModule = (function () {
+    function AppModule() {
     }
-    
     AppModule = __decorate([
         core_1.NgModule({
-            imports : [
-                platform_browser_1.BrowserModule,
+            imports: [platform_browser_1.BrowserModule,
                 app_routing_1.routing,
                 forms_1.FormsModule,
-                http_1.HttpModule    
-            ],
-            declarations : [
-                app_component_1.AppComponent,
+                http_1.HttpModule],
+            declarations: [app_component_1.AppComponent,
                 search_component_1.SearchComponent,
                 navbar_component_1.NavbarComponent,
                 about_component_1.AboutComponent,
                 artist_component_1.ArtistComponent,
-                album_component_1.AlbumComponent
-            ],
-            bootstrap : [
-                app_component_1.AppComponent
-            ]
-        }),
+                album_component_1.AlbumComponent],
+            bootstrap: [app_component_1.AppComponent]
+        }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
-    
     return AppModule;
 }());
-
 exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map

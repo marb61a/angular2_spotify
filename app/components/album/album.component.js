@@ -33,10 +33,9 @@ var AlbumComponent = (function () {
             selector: 'album',
             templateUrl: 'album.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof spotify_service_1.SpotifyService !== 'undefined' && spotify_service_1.SpotifyService) === 'function' && _a) || Object, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [spotify_service_1.SpotifyService, router_1.ActivatedRoute])
     ], AlbumComponent);
     return AlbumComponent;
-    var _a;
 }());
 exports.AlbumComponent = AlbumComponent;
 //# sourceMappingURL=album.component.js.map
